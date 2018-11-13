@@ -1,0 +1,230 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"AerofoilForce.plt"'
+$!VarSet |LFDSVL1| = '"X" "Cp"'
+$!SetStyleBase Factory
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = 'Untitled'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = No
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = 1
+    Y = 0.25
+    }
+  Width = 9
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Frame 001'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-3]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    TextShape
+      {
+      Height = 2.3
+      }
+    Box
+      {
+      LineThickness = 0.2
+      }
+    XYPos
+      {
+      X = 85.986
+      Y = 84.88
+      }
+    }
+$!LineMap  [1]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Red
+    LineThickness = 0.2
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Var = 2
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Green
+    LinePattern = DashDot
+    LineThickness = 0.2
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Var = 2
+    Color = Green
+    }
+$!LineMap  [3]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 3
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Blue
+    LinePattern = LongDash
+    LineThickness = 0.2
+    }
+  Symbols
+    {
+    Color = Blue
+    FillColor = Blue
+    }
+  BarCharts
+    {
+    Color = Blue
+    FillColor = Blue
+    }
+  ErrorBars
+    {
+    Var = 2
+    Color = Blue
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    LineThickness = 0.2
+    }
+  ViewportPosition
+    {
+    X1 = 14.279
+    Y1 = 13.689
+    X2 = 89.279
+    Y2 = 90.689
+    }
+  ViewportTopSnapTarget = 90.6887520191
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -0.050000000000000003
+    RangeMax = 1.05
+    GRSpacing = 0.2
+    Ticks
+      {
+      ShowOnGridBorderMax = Yes
+      }
+    Gridlines
+      {
+      Show = Yes
+      LinePattern = LongDash
+      PatternLength = 0.8
+      }
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -3.2086427656850196
+    RangeMax = 0.9913572343149808
+    IsReversed = Yes
+    AutoGrid = No
+    GRSpacing = 1
+    Ticks
+      {
+      ShowOnGridBorderMax = Yes
+      }
+    Gridlines
+      {
+      Show = Yes
+      LinePattern = LongDash
+      PatternLength = 0.8
+      }
+    }
+$!FrameControl ActivateByNumber
+  Frame = 1
+$!SetStyleBase Config
